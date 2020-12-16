@@ -8,7 +8,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&display=swap" 
 rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Prata&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
   
@@ -63,46 +62,61 @@ rel="stylesheet">
     
     <div class="services__wrap">
 
-      <div class="slider">
+      <div class="slider multiple-items">
         <div class="services__box">
           <p class="services__box__article">Вечерний макияж</p>
           <p class="services__box__time">60 минут</p>
           <img src="assets/img/services_1.png" alt="">
         </div>
-
         <div class="services__box">
           <p class="services__box__article">Свадебный макияж</p>
           <p class="services__box__time">60 минут</p>
           <img src="assets/img/services_2.png" alt="">
         </div>
-
         <div class="services__box">
           <p class="services__box__article">Макияж на фотосессию</p>
           <p class="services__box__time">60 минут</p>
           <img src="assets/img/services_3.png" alt="">
         </div>
-
+        <div class="services__box">
+          <p class="services__box__article">Макияж на фотосессию</p>
+          <p class="services__box__time">60 минут</p>
+          <img src="assets/img/services_3.png" alt="">
+        </div>
+        <div class="services__box">
+          <p class="services__box__article">Макияж на фотосессию</p>
+          <p class="services__box__time">60 минут</p>
+          <img src="assets/img/services_3.png" alt="">
+        </div>
         <div class="services__box">
           <p class="services__box__article">Вечерний макияж</p>
           <p class="services__box__time">60 минут</p>
           <img src="assets/img/services_1.png" alt="">
         </div>
+        <div class="services__box">
+          <p class="services__box__article">Вечерний макияж</p>
+          <p class="services__box__time">60 минут</p>
+          <img src="assets/img/services_1.png" alt="">
+        </div>
+
+        <ul class="slider_dots"></ul>
       </div>
     </div>
+    
 
   </section>
 
   <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
   <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   <script>
-    
-
 $(document).ready(function(){
-  $(".slider").slick({
-
-    // normal options...
+  $('.multiple-items').slick({
     infinite: false,
-
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    arrows: false,
+    dots: true,
+    dotsClass: "slider_dots"
   });
 });
   </script>
