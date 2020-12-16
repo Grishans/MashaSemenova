@@ -12,12 +12,12 @@ header {
   display: flex;
   flex-direction: column;
   padding: 5% 5% 0 19%;
-  height: 100vh;
+  height: auto;
 }
 .header__nav {
   display: flex;
   align-items: flex-start;
-  margin-bottom: 25%;
+  margin-bottom: 14%;
 }
 .header__nav img {
   cursor: pointer;
@@ -42,13 +42,18 @@ header {
 }
 .header__main img.girl {
   position: absolute;
-  width: 55%;
+  width: 60%;
   bottom: 0;
-  right: 2%;
+  right: -1.6%;
 }
 .header__main__text {
   display: flex;
   flex-direction: column;
+  margin-bottom: 20%;
+  width: 55%;
+}
+.header__main__text img {
+  width: 100%;
 }
 .header__main__text p {
   font-weight: 500;
@@ -105,4 +110,18 @@ header {
 }
 .header__main__sn a {
   margin-bottom: 20px;
+}
+
+p.title {
+  font-size: 36px;
+  font-family: "Prata", serif;
+}
+
+section.services {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  margin: 0 0 0 auto;
+  margin-bottom: 100px;
 }

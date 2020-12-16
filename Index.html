@@ -6,7 +6,12 @@
   <title>Maria semenova</title>
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&display=swap" 
+rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Prata&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  
 </head>
 <body>
   <header>
@@ -34,7 +39,7 @@
           <label for="EN">EN</label>
           <hr>
           <input id="RU" name="checkLang" type="radio">
-          <label for="RU">RUs</label>
+          <label for="RU">RU</label>
         </div>
         
         <div class="header__main__sn">
@@ -53,8 +58,53 @@
     
   </header>
 
+  <section class="services">
+    <p class="title">Услуги</p>
+    
+    <div class="services__wrap">
 
+      <div class="slider">
+        <div class="services__box">
+          <p class="services__box__article">Вечерний макияж</p>
+          <p class="services__box__time">60 минут</p>
+          <img src="assets/img/services_1.png" alt="">
+        </div>
 
-  <script src="assets/js/script.js"></script>
+        <div class="services__box">
+          <p class="services__box__article">Свадебный макияж</p>
+          <p class="services__box__time">60 минут</p>
+          <img src="assets/img/services_2.png" alt="">
+        </div>
+
+        <div class="services__box">
+          <p class="services__box__article">Макияж на фотосессию</p>
+          <p class="services__box__time">60 минут</p>
+          <img src="assets/img/services_3.png" alt="">
+        </div>
+
+        <div class="services__box">
+          <p class="services__box__article">Вечерний макияж</p>
+          <p class="services__box__time">60 минут</p>
+          <img src="assets/img/services_1.png" alt="">
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script>
+    
+
+$(document).ready(function(){
+  $(".slider").slick({
+
+    // normal options...
+    infinite: false,
+
+  });
+});
+  </script>
 </body>
 </html>
