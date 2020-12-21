@@ -5,10 +5,16 @@ body {
   font-weight: 400;
   font-size: 14px;
 }
+
+/* Header */
 header {
-  background-image: url(../img/header_bg.png);
-  background-repeat: no-repeat;
-  background-size: 100%;
+  position: relative;
+  height: auto;
+  z-index: 1;
+}
+
+.header__wrap {
+  position: relative;
   display: flex;
   flex-direction: column;
   padding: 5% 5% 0 19%;
@@ -77,6 +83,7 @@ header {
   display: flex;
   flex-direction: column;
   padding-top: 50px;
+  z-index: 2;
 }
 .header__main__language {
   display: flex;
@@ -112,23 +119,55 @@ header {
   margin-bottom: 20px;
 }
 
+.header__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #eacbae;
+  z-index: -1;
+}
+.header__bg img {
+  width: 100%;
+  height: 100%;
+}
+
+/* Services */
+
 p.title {
   font-size: 36px;
   font-family: "Prata", serif;
+  text-align: center;
 }
 
 section.services {
+  position: relative;
+  width: 100%;
+  margin-bottom: 100px;
+  background: #f9f5f1;
+}
+.services__wrap {
   display: flex;
   flex-direction: column;
-  width: 90%;
+  width: 94%;
+  height: auto;
   margin: 0 0 0 auto;
-  margin-bottom: 100px;
 }
 .services__box {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-right: 20px;
+  margin-right: 4%;
+  background: #fff;
+}
+p.services__box__article {
+  font-size: 24px;
+  font-family: "Prata", serif;
+}
+p.services__box__time {
+  font-size: 18px;
+  font-family: "Prata", serif;
 }
 .services__box img {
   width: 100%;
@@ -162,4 +201,99 @@ ul.slider_dots li button:hover {
 }
 ul.slider_dots li[class="slick-active"] button {
   background: #696969;
+}
+section.services .slick-initialized .slick-slide {
+  outline: none;
+}
+.srvice__lastSlide_opacity {
+  position: absolute;
+  height: 59.1%;
+  width: 14.3%;
+  background: #fff;
+  bottom: 8%;
+  right: 0;
+  opacity: 0.6;
+}
+
+/* Portfolio */
+
+section.portfolio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.portolio__wrap {
+  width: 77%;
+}
+.portfolio__section {
+  position: relative;
+}
+.portfolio__toogle {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  z-index: -1;
+}
+.portfolio__toogle input {
+  display: none;
+}
+.portfolio__toogle input:checked + label {
+  color: #aa4d54;
+}
+.portfolio__toogle label {
+  margin: 0 2%;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.portfolio__slider {
+  position: relative;
+  display: flex;
+  white-space: nowrap;
+  overflow-x: scroll;
+  width: 100%;
+  padding-top: 50px;
+  transition: 0.3s;
+}
+.portfolio__slide__wrap {
+  display: flex;
+  flex-wrap: wrap;
+  min-width: 100%;
+  z-index: 0;
+  transition: 0.3s;
+}
+.portfolio__slide__wrap img {
+  width: 32%;
+  margin: 5px;
+}
+.portfolio__slide__wrap img:nth-child(even) {
+  height: 32.5%;
+}
+.portfolio__slide__wrap img:nth-child(5) {
+  transform: translateY(-34%);
+}
+.portfolio__slideButton {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  right: 3%;
+  top: 1%;
+  z-index: 1;
+  color: #000;
+  font-size: 22px;
+}
+.portfolio__slideButton span {
+  margin: 0 15px;
+  cursor: pointer;
+}
+.portfolio__slideButton p {
+  margin: 0;
+}
+.portfolio__slideButton p.firstLetter {
+  color: #a74650;
+  font-size: 24px;
+}
+.portfolio__slideButton p.delimiter {
+  margin: 0 5px;
 }
