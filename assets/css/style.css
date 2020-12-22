@@ -139,13 +139,15 @@ p.title {
   font-size: 36px;
   font-family: "Prata", serif;
   text-align: center;
+  margin: 0;
+  padding: 15px 0 32px 0;
 }
 
 section.services {
   position: relative;
   width: 100%;
-  margin-bottom: 100px;
   background: #f9f5f1;
+  padding: 32px 0;
 }
 .services__wrap {
   display: flex;
@@ -218,6 +220,7 @@ section.services .slick-initialized .slick-slide {
 /* Portfolio */
 
 section.portfolio {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -251,7 +254,7 @@ section.portfolio {
   position: relative;
   display: flex;
   white-space: nowrap;
-  overflow-x: scroll;
+  overflow-x: hidden;
   width: 100%;
   padding-top: 50px;
   transition: 0.3s;
@@ -286,6 +289,8 @@ section.portfolio {
 .portfolio__slideButton span {
   margin: 0 15px;
   cursor: pointer;
+  outline: none;
+  user-select: none;
 }
 .portfolio__slideButton p {
   margin: 0;
@@ -296,4 +301,206 @@ section.portfolio {
 }
 .portfolio__slideButton p.delimiter {
   margin: 0 5px;
+}
+section.portfolio .title__top_left,
+section.portfolio .title__top_right {
+  background: #f9f5f1;
+}
+.title__top_left,
+.title__top_right {
+  position: absolute;
+  top: 0;
+  height: 65px;
+  width: 35%;
+}
+.title__top_left {
+  left: 0;
+}
+.title__top_right {
+  right: 0;
+}
+
+/* Courses */
+
+section.courses {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fcf0e4;
+  padding: 0 0 6% 0;
+}
+.courses__wrap {
+  width: 77%;
+}
+.courses__content {
+  display: flex;
+  width: 100%;
+  padding-top: 6%;
+}
+.courses__box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  width: 25%;
+  height: 432px;
+  margin-right: 3%;
+  padding: 2% 3%;
+  z-index: 1;
+}
+.courses__box span {
+  width: 115%;
+  font-size: 24px;
+  margin-bottom: 25px;
+  text-align: center;
+  height: 20%;
+  font-family: "Prata", serif;
+}
+.courses__box ul {
+  padding: 0;
+  margin: 0;
+}
+.courses__box ul li {
+  list-style-type: none;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+.courses__box label.courses_btn {
+  position: absolute;
+  bottom: 5%;
+  border: 1px solid #000;
+  width: 60%;
+  height: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.courses__box label.courses_btn:hover {
+  color: #fff;
+  background: #000;
+}
+img.courses_bg {
+  position: absolute;
+  width: 36%;
+  bottom: 0;
+  right: 2%;
+  z-index: 0;
+}
+section.courses .title__top_left,
+section.courses .title__top_right {
+  background: #fff;
+}
+
+/* About */
+
+section.about {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #f9f5f1;
+  padding: 160px 0 140px 0;
+}
+.about__wrap {
+  width: 61%;
+}
+.about__contentWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+}
+.about__box {
+  position: relative;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  background: #fff;
+  padding: 5% 10%;
+  z-index: 1;
+}
+.about__box__title p {
+  font-family: "Prata", serif;
+  font-size: 24px;
+  margin: 0 0 0 5%;
+}
+.about__box hr {
+  border: none;
+  border-bottom: 1px solid #f9f5f1;
+  width: 40%;
+  margin: 15px 0;
+}
+.about__box__text ul {
+  margin: 0;
+  padding: 0;
+}
+.about__box__text ul li {
+  list-style-type: none;
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+.about__box__btn {
+  display: flex;
+  justify-content: center;
+}
+.about__box__btn label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #000;
+  cursor: pointer;
+  width: 40%;
+  height: 55px;
+  transition: 0.3s;
+  margin: 50px 0 20px 0;
+}
+.about__box__btn label:hover {
+  background: #000;
+  color: #fff;
+}
+.about__sn {
+  margin-top: 20px;
+}
+.about__sn a {
+  margin: 0 10px;
+}
+.about__sn a img {
+  transition: 0.3s;
+}
+.about__sn a img:hover {
+  transform: rotate(15deg);
+}
+
+.about__box img {
+  position: absolute;
+}
+.about__box img.about_paint {
+  top: 68%;
+  left: -15%;
+  width: 45%;
+}
+.about__box img.about_photo {
+  top: 6%;
+  left: 93%;
+  width: 77%;
+}
+.about__box img.about_quotes {
+  top: 2%;
+  left: 5%;
+  width: 5%;
+}
+section.about img.about_bg {
+  position: absolute;
+  top: 10%;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+}
+.services__box video {
+  width: 100%;
+  height: 100%;
 }

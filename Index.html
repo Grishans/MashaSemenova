@@ -180,13 +180,144 @@ rel="stylesheet">
         </div>
         <div class="portfolio__slideButton">
           <span class="portfolio_prev" onclick=scrollPrev()><</span>
-          <p class="firstLetter">1</p>
+          <p id="firstLetter" class="firstLetter"></p>
           <p class="delimiter">/</p>
-          <p>2</p>
+          <p id="delimiter"></p>
           <span class="portfolio_next" onclick=scrollNext()>></span>
         </div>
       </div>
     </div>
+    <div class="title__top_left"></div>
+    <div class="title__top_right"></div>
+  </section>
+
+  <section class="courses">
+    <div class="courses__wrap">
+      <p class="title">Курсы</p>
+      <div class="courses__content">
+        <div class="courses__box">
+          <span>“Сам себе визажист”</span>
+          <ul>
+            <li>4 занятия (по 60 минут)</li>
+            <li>определение типа кожи и цветоитпа</li>
+            <li>обучение базовым техникам макияжа</li>
+            <li>обучающие материалы</li>
+          </ul>
+          <label for="Записаться на курс" class="courses_btn">Записаться на курс</label>
+        </div>
+        <div class="courses__box">
+          <span>Базовый курс “Начинающий визажист”</span>
+          <ul>
+            <li>10-15 занятия (по 60 минут)</li>
+            <li>типы кожи и особенности работы</li>
+            <li>базовые техники макияжа</li>
+            <li>обучающие материалы</li>
+          </ul>
+          <label for="Записаться на курс" class="courses_btn">Записаться на курс</label>
+        </div>
+      </div>
+      
+    </div>
+    <img src="assets/img/courses_bg.png" alt="" class="courses_bg">
+    <div class="title__top_left"></div>
+    <div class="title__top_right"></div>
+  </section>
+
+  <section class="about">
+    <div class="about__wrap">
+      <div class="about__contentWrap">
+        <div class="about__box">
+          <div class="about__box__title">
+            <p>Я считаю, что каждая женщина прекрасна!</p>
+          </div>
+          <hr>
+          <div class="about__box__text">
+            <ul>
+              <li>Привет! Я Мария Семенова, международный визажист с 12 летним стажем.</li>
+              <li>Я люблю свою деятельность, и отношусь к ней не как к работе, а как к творчеству.</li>
+              <li>Обращаясь ко мне, Вы получаете широкий спектр качественных услуг по приемлемым ценам.</li>
+            </ul>
+          </div>
+          <div class="about__box__btn">
+            <label>Записаться</label>
+          </div>
+          <img class="about_paint" src="assets/img/about_paint.png" alt="">
+          <img class="about_photo" src="assets/img/about_photo.png" alt="">
+          <img class="about_quotes" src="assets/img/about_quotes.png" alt="">
+        </div>
+        <div class="about__sn">
+          <a href=""><img src="assets/img/Instagram_color.svg" alt=""></a>
+          <a href=""><img src="assets/img/Facebook_color.svg" alt=""></a>
+        </div>
+      </div>
+    </div>
+    <img class="about_bg" src="assets/img/about_bg.png" alt="">
+  </section>
+
+  <section class="services">
+
+    <div class="services__wrap">
+      <p class="title">Отзывы</p>
+    
+      <div class="services__wrap">
+  
+        <div class="slider multiple-items">
+          <div>
+            <div class="services__box">
+            
+              <video controls src="assets/img/video.mp4"></video>
+          </div>
+        </div>
+          <div>
+            <div class="services__box">
+              
+              <video controls src="assets/img/video.mp4"></video>
+            </div>
+          </div>
+         
+          <div>
+            <div class="services__box">
+              
+              <video controls src="assets/img/video.mp4"></video>
+            </div>
+          </div>
+          
+          <div>
+            <div class="services__box">
+              
+              <video controls src="assets/img/video.mp4"></video>
+            </div>
+          </div>
+          
+          <div>
+            <div class="services__box">
+              
+              <video controls src="assets/img/video.mp4"></video>
+            </div>
+          </div>
+          
+          <div>
+            <div class="services__box">
+              
+              <video controls src="assets/img/video.mp4"></video>
+            </div>
+          </div>
+          
+          <div>
+            <div class="services__box">
+              
+              <video controls src="assets/img/video.mp4"></video>
+            </div>
+          </div>
+  
+        </div>
+        <div class="title__top_left"></div>
+        <div class="title__top_right"></div>
+      </div>
+      
+      <div class="srvice__lastSlide_opacity"></div>
+    </div>
+    
   </section>
 
   <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
@@ -204,48 +335,44 @@ $(document).ready(function(){
 });
   </script>
   <script>
-      var current = 0
-      var sliderObjectWrap = document.getElementById('portfolio__slider')
-      var sliderObject = document.getElementsByClassName('portfolio__slide__wrap')
-    // function scrollNext(){
-    //   sliderObject.scroll(current + sliderObject.offsetWidth, 0)
-    //   current+=sliderObject.offsetWidth
-    //   console.log('currentNext', current)
-    // }
-    // function scrollPrev(){
-    //   sliderObject.scroll(current - sliderObject.offsetWidth, 0)
-    //   current-=sliderObject.offsetWidth
-    //   if(current<0){
-    //     current = 0
-    //   }
-    //   console.log('currentPrev', current)
-    // }
-    function scrollNext(){
-      for(let i=0; i<sliderObject.length;i++){
+    var firstLetter = document.getElementById('firstLetter')
+    var delimiter = document.getElementById('delimiter')
+    var currentLetter = 1 // Новер слайда
+    var current = 0 // расстояние, на которое передвинуть слайд
+    var sliderObjectWrap = document.getElementById('portfolio__slider')
+    var sliderObject = document.getElementsByClassName('portfolio__slide__wrap')
+    function scrollNext(){ // Перелистывание слайда впред
+
+      if(current < sliderObjectWrap.offsetWidth * (sliderObject.length - 1)){ // Проверка на количество слайдов
+        for(let i=0; i<sliderObject.length;i++){
         sliderObject[i].style.transform = "translateX(-" + (current + sliderObjectWrap.offsetWidth) +"px)"
-      }
-      
-      if(current < sliderObjectWrap.offsetWidth * (sliderObject.length - 1)){
-        // current = sliderObjectWrap.offsetWidth * (sliderObject.length - 1)
+        } // Перебираем все слайды
         current+=sliderObjectWrap.offsetWidth
-        console.log('currentNextIF', current)
+        currentLetter+=1
       } else{
         current = current
       }
-      console.log('currentNext', current)
-    }
-    function scrollPrev(){
+      firstLetter.innerHTML = currentLetter
+    } 
+
+    function scrollPrev(){ // Перелистывание слайда назад
       for(let i=0; i<sliderObject.length;i++){
         sliderObject[i].style.transform = "translateX(-" + (current - sliderObjectWrap.offsetWidth) +"px)"
-      }
+      } // Перебираем все слайды
       current-=sliderObjectWrap.offsetWidth
-      if(current < 0){
+      currentLetter-=1
+      if(current < 0){ // Проверка на количество слайдов
         current = 0
-      }
-      console.log('currentPrev', current)
-      
-    }
-    
+        currentLetter = 1
+      } 
+      firstLetter.innerHTML = currentLetter
+    } 
+
+    document.addEventListener("DOMContentLoaded", () => {
+      delimiter.innerHTML = sliderObject.length
+      firstLetter.innerHTML = currentLetter
+    }); // Установить конкретное кол-во слайдов в верстку
+
   </script>
 </body>
 </html>
