@@ -65,20 +65,17 @@ rel="stylesheet">
   </header>
 
   <section class="services">
-
+    <p class="title">Услуги</p>
     <div class="services__wrap">
-      <p class="title">Услуги</p>
-    
-      <div class="services__wrap">
-  
+
         <div class="slider multiple-items">
           <div>
             <div class="services__box">
             <p class="services__box__article">Вечерний макияж</p>
             <p class="services__box__time">60 минут</p>
             <img src="assets/img/services_1.png" alt="">
+            </div>
           </div>
-        </div>
           <div>
             <div class="services__box">
               <p class="services__box__article">Свадебный макияж</p>
@@ -86,7 +83,6 @@ rel="stylesheet">
               <img src="assets/img/services_2.png" alt="">
             </div>
           </div>
-         
           <div>
             <div class="services__box">
               <p class="services__box__article">Макияж на фотосессию</p>
@@ -129,7 +125,6 @@ rel="stylesheet">
   
         </div>
         <ul class="slider_dots"></ul>
-      </div>
       
       <div class="srvice__lastSlide_opacity"></div>
     </div>
@@ -142,49 +137,119 @@ rel="stylesheet">
 
       <div class="portfolio__section">
         <div class="portfolio__toogle">
-          <input id="weeding" name="portfolio" type="radio">
-          <label for="weeding">Свадебный макияж</label>
+          <input id="weeding" name="portfolio" type="radio" checked>
+          <label onclick=showWeeding() for="weeding">Свадебный макияж</label>
           <input id="night" name="portfolio" type="radio">
-          <label for="night">Вечерний макияж</label>
+          <label onclick=showNight() for="night">Вечерний макияж</label>
           <input id="day" name="portfolio" type="radio">
-          <label for="day">Дневной макияж</label>
+          <label onclick=showDay() for="day">Дневной макияж</label>
         </div>
-        <div id="portfolio__slider" class="portfolio__slider">
-          
-          <div id="portfolio__slide__wrap" class="portfolio__slide__wrap">
-            <img src="assets/img/services_1.png" alt="">
-            <img src="assets/img/services_2.png" alt="">
-            <img src="assets/img/services_3.png" alt="">
-            <img src="assets/img/services_1.png" alt="">
-            <img src="assets/img/services_2.png" alt="">
-            <img src="assets/img/services_3.png" alt="">
+        <div id="portfolio__weeding">
+          <div id="portfolio__slider" class="portfolio__slider">
+            <div id="portfolio__slide__wrap" class="portfolio__slide__wrap">
+              <img src="assets/img/services_1.png" alt="">
+              <img src="assets/img/services_2.png" alt="">
+              <img src="assets/img/services_3.png" alt="">
+              <img src="assets/img/services_1.png" alt="">
+              <img src="assets/img/services_2.png" alt="">
+              <img src="assets/img/services_3.png" alt="">
+            </div>
+            <div id="portfolio__slide__wrap" class="portfolio__slide__wrap">
+              <img src="assets/img/services_1.png" alt="">
+              <img src="assets/img/services_1.png" alt="">
+              <img src="assets/img/services_1.png" alt="">
+              <img src="assets/img/services_1.png" alt="">
+              <img src="assets/img/services_1.png" alt="">
+              <img src="assets/img/services_1.png" alt="">
+            </div>
+            <div id="portfolio__slide__wrap" class="portfolio__slide__wrap">
+              <img src="assets/img/services_2.png" alt="">
+              <img src="assets/img/services_2.png" alt="">
+              <img src="assets/img/services_2.png" alt="">
+              <img src="assets/img/services_2.png" alt="">
+              <img src="assets/img/services_2.png" alt="">
+              <img src="assets/img/services_2.png" alt="">
+            </div>
           </div>
-          <div id="portfolio__slide__wrap" class="portfolio__slide__wrap">
-            <img src="assets/img/services_1.png" alt="">
-            <img src="assets/img/services_1.png" alt="">
-            <img src="assets/img/services_1.png" alt="">
-            <img src="assets/img/services_1.png" alt="">
-            <img src="assets/img/services_1.png" alt="">
-            <img src="assets/img/services_1.png" alt="">
+          <div class="portfolio__slideButton">
+            <span class="portfolio_prev" onclick=scrollPrev()><</span>
+            <p id="firstLetter" class="firstLetter"></p>
+            <p class="delimiter">/</p>
+            <p id="delimiter"></p>
+            <span class="portfolio_next" onclick=scrollNext()>></span>
           </div>
-          <div id="portfolio__slide__wrap" class="portfolio__slide__wrap">
-            <img src="assets/img/services_2.png" alt="">
-            <img src="assets/img/services_2.png" alt="">
-            <img src="assets/img/services_2.png" alt="">
-            <img src="assets/img/services_2.png" alt="">
-            <img src="assets/img/services_2.png" alt="">
-            <img src="assets/img/services_2.png" alt="">
-          </div>
-             
-            
         </div>
-        <div class="portfolio__slideButton">
-          <span class="portfolio_prev" onclick=scrollPrev()><</span>
-          <p id="firstLetter" class="firstLetter"></p>
-          <p class="delimiter">/</p>
-          <p id="delimiter"></p>
-          <span class="portfolio_next" onclick=scrollNext()>></span>
+        <div id="portfolio__night">
+          <div id="portfolio__slider_night" class="portfolio__slider">
+            <div id="portfolio__slide__wrap" class="portfolio__slide__wrap">
+              <img src="assets/img/services_1.png" alt="">
+              <img src="assets/img/services_1.png" alt="">
+              <img src="assets/img/services_1.png" alt="">
+              <img src="assets/img/services_1.png" alt="">
+              <img src="assets/img/services_1.png" alt="">
+              <img src="assets/img/services_1.png" alt="">
+            </div>
+            <div id="portfolio__slide__wrap" class="portfolio__slide__wrap">
+              <img src="assets/img/services_3.png" alt="">
+              <img src="assets/img/services_3.png" alt="">
+              <img src="assets/img/services_3.png" alt="">
+              <img src="assets/img/services_3.png" alt="">
+              <img src="assets/img/services_3.png" alt="">
+              <img src="assets/img/services_3.png" alt="">
+            </div>
+            <div id="portfolio__slide__wrap" class="portfolio__slide__wrap">
+              <img src="assets/img/services_3.png" alt="">
+              <img src="assets/img/services_3.png" alt="">
+              <img src="assets/img/services_3.png" alt="">
+              <img src="assets/img/services_3.png" alt="">
+              <img src="assets/img/services_3.png" alt="">
+              <img src="assets/img/services_3.png" alt="">
+            </div>
+          </div>
+          <div class="portfolio__slideButton">
+            <span class="portfolio_prev" onclick=scrollPrev()><</span>
+            <p id="firstLetter" class="firstLetter"></p>
+            <p class="delimiter">/</p>
+            <p id="delimiter"></p>
+            <span class="portfolio_next" onclick=scrollNext()>></span>
+          </div>
         </div>
+        <div id="portfolio__day">
+          <div id="portfolio__slider_day" class="portfolio__slider">
+            <div id="portfolio__slide__wrap" class="portfolio__slide__wrap">
+              <img src="assets/img/services_3.png" alt="">
+              <img src="assets/img/services_3.png" alt="">
+              <img src="assets/img/services_3.png" alt="">
+              <img src="assets/img/services_3.png" alt="">
+              <img src="assets/img/services_3.png" alt="">
+              <img src="assets/img/services_3.png" alt="">
+            </div>
+            <div id="portfolio__slide__wrap" class="portfolio__slide__wrap">
+              <img src="assets/img/services_1.png" alt="">
+              <img src="assets/img/services_1.png" alt="">
+              <img src="assets/img/services_1.png" alt="">
+              <img src="assets/img/services_1.png" alt="">
+              <img src="assets/img/services_1.png" alt="">
+              <img src="assets/img/services_1.png" alt="">
+            </div>
+            <div id="portfolio__slide__wrap" class="portfolio__slide__wrap">
+              <img src="assets/img/services_2.png" alt="">
+              <img src="assets/img/services_2.png" alt="">
+              <img src="assets/img/services_2.png" alt="">
+              <img src="assets/img/services_2.png" alt="">
+              <img src="assets/img/services_2.png" alt="">
+              <img src="assets/img/services_2.png" alt="">
+            </div>
+          </div>
+          <div class="portfolio__slideButton">
+            <span class="portfolio_prev" onclick=scrollPrev()><</span>
+            <p id="firstLetter" class="firstLetter"></p>
+            <p class="delimiter">/</p>
+            <p id="delimiter"></p>
+            <span class="portfolio_next" onclick=scrollNext()>></span>
+          </div>
+        </div>
+        
       </div>
     </div>
     <div class="title__top_left"></div>
@@ -254,68 +319,125 @@ rel="stylesheet">
     <img class="about_bg" src="assets/img/about_bg.png" alt="">
   </section>
 
-  <section class="services">
-
+  <section class="services reviews">
+    <p class="title">Отзывы</p>
+    <div class="reviews__toogle">
+      <input id="video" name="reviews" type="radio" checked>
+      <label for="video">Видео отзывы</label>
+      <input id="text" name="reviews" type="radio">
+      <label for="text">Текстовые отзывы</label>
+    </div>
     <div class="services__wrap">
-      <p class="title">Отзывы</p>
-    
-      <div class="services__wrap">
-  
+      <hr>
         <div class="slider multiple-items">
           <div>
             <div class="services__box">
-            
               <video controls src="assets/img/video.mp4"></video>
           </div>
         </div>
           <div>
             <div class="services__box">
-              
               <video controls src="assets/img/video.mp4"></video>
             </div>
           </div>
-         
           <div>
             <div class="services__box">
-              
               <video controls src="assets/img/video.mp4"></video>
             </div>
           </div>
-          
           <div>
             <div class="services__box">
-              
               <video controls src="assets/img/video.mp4"></video>
             </div>
           </div>
-          
           <div>
             <div class="services__box">
-              
-              <video controls src="assets/img/video.mp4"></video>
-            </div>
-          </div>
-          
-          <div>
-            <div class="services__box">
-              
-              <video controls src="assets/img/video.mp4"></video>
-            </div>
-          </div>
-          
-          <div>
-            <div class="services__box">
-              
               <video controls src="assets/img/video.mp4"></video>
             </div>
           </div>
   
         </div>
-        <div class="title__top_left"></div>
-        <div class="title__top_right"></div>
-      </div>
-      
+
+        <ul class="slider_dots"></ul>
+
       <div class="srvice__lastSlide_opacity"></div>
+    </div>
+    <div class="title__top_left"></div>
+    <div class="title__top_right"></div>
+  </section>
+
+  <section class="services instagram">
+
+    <div class="services__wrap">
+        <div class="instagram__title">
+          <p>Подписывайтесь на мой Instagram!</p>
+          <a href="https://www.instagram.com/mariyasafirmua/" target="blank"><span>@mariyasafirmua</span></a>
+          <img src="assets/img/insta_dog.svg" alt="">
+        </div>
+
+        <div class="slider multiple-itemsInst">
+          <div>
+            <div class="services__box insta__box">
+              <a href="#">
+                <img src="assets/img/services_1.png" alt="">
+                <div class="insta__box__bg_hover">
+                  <img src="assets/img/instagram.svg" alt="">
+                </div>
+              </a>
+            </div>
+          </div>
+          <div>
+            <div class="services__box insta__box">
+              <a href="#">
+                <img src="assets/img/services_1.png" alt="">
+                <div class="insta__box__bg_hover">
+                  <img src="assets/img/instagram.svg" alt="">
+                </div>
+              </a>
+            </div>
+          </div>
+          <div>
+            <div class="services__box insta__box">
+              <a href="#">
+                <img src="assets/img/services_1.png" alt="">
+                <div class="insta__box__bg_hover">
+                  <img src="assets/img/instagram.svg" alt="">
+                </div>
+              </a>
+            </div>
+          </div>
+          <div>
+            <div class="services__box insta__box">
+              <a href="#">
+                <img src="assets/img/services_1.png" alt="">
+                <div class="insta__box__bg_hover">
+                  <img src="assets/img/instagram.svg" alt="">
+                </div>
+              </a>
+            </div>
+          </div>
+          <div>
+            <div class="services__box insta__box">
+              <a href="#">
+                <img src="assets/img/services_1.png" alt="">
+                <div class="insta__box__bg_hover">
+                  <img src="assets/img/instagram.svg" alt="">
+                </div>
+              </a>
+            </div>
+          </div>
+          <div>
+            <div class="services__box insta__box">
+              <a href="#">
+                <img src="assets/img/services_1.png" alt="">
+                <div class="insta__box__bg_hover">
+                  <img src="assets/img/instagram.svg" alt="">
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <ul class="slider_dots"></ul>
     </div>
     
   </section>
@@ -335,14 +457,30 @@ $(document).ready(function(){
 });
   </script>
   <script>
+$(document).ready(function(){
+  $('.multiple-itemsInst').slick({
+    infinite: false,
+    slidesToShow: 4.5,
+    slidesToScroll: 1,
+    arrows: false,
+    dots: true,
+    dotsClass: "slider_dots",
+  });
+});
+  </script>
+  <script>
     var firstLetter = document.getElementById('firstLetter')
     var delimiter = document.getElementById('delimiter')
-    var currentLetter = 1 // Новер слайда
+    var currentLetter = 1 // Номер слайда
     var current = 0 // расстояние, на которое передвинуть слайд
     var sliderObjectWrap = document.getElementById('portfolio__slider')
-    var sliderObject = document.getElementsByClassName('portfolio__slide__wrap')
-    function scrollNext(){ // Перелистывание слайда впред
+    var sliderObject = document.querySelectorAll('#portfolio__slider > #portfolio__slide__wrap')
+    var sliderObjectNight = document.querySelectorAll('#portfolio__slider_night > #portfolio__slide__wrap')
+    var sliderObjectNight = document.querySelectorAll('#portfolio__slider_day > #portfolio__slide__wrap')
 
+/////////////////////////////////////////
+
+    function scrollNext(){ // Перелистывание слайда впред
       if(current < sliderObjectWrap.offsetWidth * (sliderObject.length - 1)){ // Проверка на количество слайдов
         for(let i=0; i<sliderObject.length;i++){
         sliderObject[i].style.transform = "translateX(-" + (current + sliderObjectWrap.offsetWidth) +"px)"
@@ -368,10 +506,43 @@ $(document).ready(function(){
       firstLetter.innerHTML = currentLetter
     } 
 
+//////////////////////////////////////////
+
+
+
+//////////////////////////////////////////
+
     document.addEventListener("DOMContentLoaded", () => {
       delimiter.innerHTML = sliderObject.length
       firstLetter.innerHTML = currentLetter
     }); // Установить конкретное кол-во слайдов в верстку
+
+
+    var Portfoloi_weeding = document.getElementById('portfolio__weeding')
+    var Portfoloi_night = document.getElementById('portfolio__night')
+    var Portfoloi_day = document.getElementById('portfolio__day')
+
+    document.addEventListener("DOMContentLoaded", () => {
+      Portfoloi_weeding.style.display = "block"
+      Portfoloi_night.style.display = "none"
+      Portfoloi_day.style.display = "none"
+    }); // Установить слайдер по умолчанию
+
+    function showWeeding(){
+      Portfoloi_weeding.style.display = "block"
+      Portfoloi_night.style.display = "none"
+      Portfoloi_day.style.display = "none"
+    }
+    function showNight(){
+      Portfoloi_weeding.style.display = "none"
+      Portfoloi_night.style.display = "block"
+      Portfoloi_day.style.display = "none"
+    }
+    function showDay(){
+      Portfoloi_weeding.style.display = "none"
+      Portfoloi_night.style.display = "none"
+      Portfoloi_day.style.display = "block"
+    }
 
   </script>
 </body>
