@@ -699,9 +699,11 @@ footer {
 .footer__logo a {
   display: flex;
   justify-content: center;
+  width: 20%;
+  margin: 0 auto;
 }
 .footer__logo img {
-  width: 20%;
+  width: 100%;
 }
 .footer__nav {
   width: 70%;
@@ -765,5 +767,5 @@ footer {
   display: flex;
 }
 .footer__sn a {
-  margin: 0 20px;
+  margin: 0 15px;
 }
