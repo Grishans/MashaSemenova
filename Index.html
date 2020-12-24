@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Maria semenova</title>
+  <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&display=swap" 
@@ -441,6 +442,70 @@ rel="stylesheet">
     </div>
     
   </section>
+
+  <section class="form">
+    <div class="form__wrap">
+      <div class="form__application">
+        <p class="form_title">Форма заявки</p>
+        <form class="form" action="">
+          <input type="text" placeholder="Имя" required>
+          <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Номер телефона" title="071-000-0000" required>
+          <input type="date" placeholder="Дата" required>
+          <select>
+            <option selected disabled>Тип макияжа</option>
+            <option value="Свадебный макияж">Свадебный макияж</option>
+            <option value="Ночной макияж">Ночной макияж</option>
+            <option value="Дневной макияж">Дневной макияж</option>
+          </select>
+          <input type="submit" value="Записаться">
+        </form>
+      </div>
+      <div class="form_img">
+        <img src="assets/img/form.png" alt="">
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer__wrap">
+      <div class="footer__logo">
+        <a href=""><img src="assets/img/logo_white.svg" alt=""></a>
+      </div>
+      <div class="footer__nav">
+        <ul>
+          <a href="#">
+            <li>Услуги</li>
+          </a>
+          <a href="#">
+            <li>Портфолио</li>
+          </a>
+          <a href="#">
+            <li>Обо мне</li>
+          </a>
+          <a href="#">
+            <li>Отзывы</li>
+          </a>
+          <a href="#">
+            <li>Курсы</li>
+          </a>
+          <a href="#">
+            <li>Социвльные сети</li>
+          </a>
+        </ul>
+      </div>
+      <hr>
+      <div class="footer__bottom">
+        <div class="footer__copywriting">
+          <p>© 2020 <a href="https://itd.company/">ITD Company.</a>  All rights reserved</p>
+        </div>
+        <div class="footer__sn">
+          <a href="#"><img src="assets/img/instagram.svg" alt=""></a>
+          <a href="#"><img src="assets/img/facebook.svg" alt=""></a>
+        </div>
+      </div>
+    </div>
+    
+  </footer>
 
   <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
   <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>

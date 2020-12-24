@@ -35,6 +35,22 @@ header {
   text-decoration: none;
   color: #000;
   margin-left: 20px;
+  position: relative;
+  line-height: 1;
+}
+.header__nav ul.main_nav a::after {
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 0;
+  height: 1px;
+  content: "";
+  transition: width 0.3s ease-out;
+  background-color: #000;
+}
+.header__nav ul.main_nav a:hover::after,
+.header__nav ul.main_nav a:focus::after {
+  width: 100%;
 }
 .header__nav ul.main_nav li {
   text-decoration: none;
@@ -595,4 +611,159 @@ section.instagram {
   width: 20%;
   height: 20%;
   z-index: 0;
+}
+
+/* Form */
+
+section.form {
+  background: #fff;
+}
+.form__wrap {
+  display: flex;
+  justify-content: space-between;
+  width: 95%;
+  margin: 0 auto;
+}
+.form__application,
+.form_img {
+  width: 48%;
+}
+.form__application {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #f9f5f1;
+}
+.form__application p.form_title {
+  font-family: "Prata", serif;
+  font-size: 36px;
+  color: #aa4d54;
+}
+.form__application form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+}
+.form__application form input,
+.form__application form select {
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  text-align-last: center;
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+  color: #787878;
+  border: none;
+  margin: 10px 0;
+  outline: none;
+}
+.form__application form select option {
+  text-align: center;
+  text-align-last: center;
+}
+.form__application input[type="submit"] {
+  padding: 10px 20px;
+  color: #aa4d54;
+  background: #fff;
+  border: none;
+  box-shadow: 0px 0px 8px #a74650;
+  cursor: pointer;
+  transition: 0.3s;
+  width: 50%;
+}
+.form__application input[type="submit"]:hover {
+  box-shadow: 0px 0px 4px #a74650;
+}
+
+.form_img img {
+  width: 100%;
+  height: 100%;
+}
+
+/* Footer */
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #dcbfa5;
+}
+.footer__wrap {
+  width: 77%;
+}
+.footer__logo {
+  margin: 20px 0;
+}
+.footer__logo a {
+  display: flex;
+  justify-content: center;
+}
+.footer__logo img {
+  width: 20%;
+}
+.footer__nav {
+  width: 70%;
+  margin: 0 auto;
+}
+.footer__nav ul {
+  display: flex;
+  list-style-type: none;
+  justify-content: space-between;
+}
+.footer__nav ul a {
+  position: relative;
+  text-decoration: none;
+  line-height: 1;
+  transition: 0.3s;
+}
+.footer__nav ul a::after {
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 0;
+  height: 1px;
+  content: "";
+  transition: width 0.3s ease-out;
+  background-color: #fff;
+}
+.footer__nav ul a:hover::after,
+.footer__nav ul a:focus::after {
+  width: 100%;
+}
+.footer__nav ul a li {
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  font-weight: 500;
+  font-size: 18px;
+}
+.footer__wrap hr {
+  border: none;
+  border-bottom: 0.5px solid #fff;
+  margin: 20px 0 30px 0;
+  opacity: 0.3;
+}
+.footer__bottom {
+  display: flex;
+  justify-content: space-between;
+}
+.footer__copywriting p {
+  font-size: 18px;
+  color: #fff;
+}
+.footer__copywriting p a {
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.footer__copywriting p a:hover {
+  text-decoration: underline;
+}
+.footer__sn {
+  display: flex;
+}
+.footer__sn a {
+  margin: 0 20px;
 }
