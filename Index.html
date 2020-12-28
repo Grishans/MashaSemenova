@@ -11,14 +11,15 @@
 rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Prata&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
   
 </head>
 <body>
   <header>
     <div class="header__wrap">
       <div class="header__nav">
-        <img src="assets/img/burger.svg" alt="">
-        <ul class="main_nav">
+        <img src="assets/img/burger.svg" alt="" onclick=toogle_nav()>
+        <ul id="main_nav" class="main_nav">
           <a href=""><li>Услуги</li></a>
           <a href=""><li>О себе</li></a>
           <a href=""><li>Портфолио</li></a>
@@ -127,7 +128,7 @@ rel="stylesheet">
         </div>
         <ul class="slider_dots"></ul>
       
-      <div class="srvice__lastSlide_opacity"></div>
+      <div id="srvice__lastSlide_opacity" class="srvice__lastSlide_opacity"></div>
     </div>
     
   </section>
@@ -176,7 +177,7 @@ rel="stylesheet">
             </ul>
           </div>
           <div class="portfolio__slideButton">
-            <span class="portfolio_prev" onclick=next()><</span>
+            <span class="portfolio_prev" onclick=prev()><</span>
             <p id="firstLetter" class="firstLetter"></p>
             <p class="delimiter">/</p>
             <p id="delimiter"></p>
@@ -196,25 +197,25 @@ rel="stylesheet">
                   <img src="assets/img/services_1.png" alt="">
               </li>
               <li>
-                <img src="assets/img/services_1.png" alt="">
-                <img src="assets/img/services_1.png" alt="">
-                <img src="assets/img/services_1.png" alt="">
-                <img src="assets/img/services_1.png" alt="">
-                <img src="assets/img/services_1.png" alt="">
-                <img src="assets/img/services_1.png" alt="">
+                <img src="assets/img/services_2.png" alt="">
+                <img src="assets/img/services_2.png" alt="">
+                <img src="assets/img/services_2.png" alt="">
+                <img src="assets/img/services_2.png" alt="">
+                <img src="assets/img/services_2.png" alt="">
+                <img src="assets/img/services_2.png" alt="">
               </li>
               <li>
-                <img src="assets/img/services_2.png" alt="">
-                <img src="assets/img/services_2.png" alt="">
-                <img src="assets/img/services_2.png" alt="">
-                <img src="assets/img/services_2.png" alt="">
-                <img src="assets/img/services_2.png" alt="">
-                <img src="assets/img/services_2.png" alt="">
+                <img src="assets/img/services_3.png" alt="">
+                <img src="assets/img/services_3.png" alt="">
+                <img src="assets/img/services_3.png" alt="">
+                <img src="assets/img/services_3.png" alt="">
+                <img src="assets/img/services_3.png" alt="">
+                <img src="assets/img/services_3.png" alt="">
               </li>
             </ul>
           </div>
           <div class="portfolio__slideButton">
-            <span class="portfolio_prev" onclick=next()><</span>
+            <span class="portfolio_prev" onclick=prev()><</span>
             <p id="firstLetter" class="firstLetter"></p>
             <p class="delimiter">/</p>
             <p id="delimiter"></p>
@@ -226,12 +227,12 @@ rel="stylesheet">
           <div class="port__slider">
             <ul id="ul">
               <li>
-                  <img src="assets/img/services_1.png" alt="">
-                  <img src="assets/img/services_2.png" alt="">
-                  <img src="assets/img/services_3.png" alt="">
-                  <img src="assets/img/services_1.png" alt="">
-                  <img src="assets/img/services_2.png" alt="">
-                  <img src="assets/img/services_3.png" alt="">
+                <img src="assets/img/services_3.png" alt="">
+                <img src="assets/img/services_3.png" alt="">
+                <img src="assets/img/services_3.png" alt="">
+                <img src="assets/img/services_3.png" alt="">
+                <img src="assets/img/services_3.png" alt="">
+                <img src="assets/img/services_3.png" alt="">
               </li>
               <li>
                 <img src="assets/img/services_1.png" alt="">
@@ -253,7 +254,7 @@ rel="stylesheet">
           </div>
 
           <div class="portfolio__slideButton">
-            <span class="portfolio_prev" onclick=next()><</span>
+            <span class="portfolio_prev" onclick=prev()><</span>
             <p id="firstLetter" class="firstLetter"></p>
             <p class="delimiter">/</p>
             <p id="delimiter"></p>
@@ -518,18 +519,19 @@ rel="stylesheet">
 
   <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
   <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
   <script>
 $(document).ready(function(){
   $('.multiple-items').slick({
     infinite: false,
     slidesToShow: 3.5,
     slidesToScroll: 1,
-    arrows: false,
     dots: true,
     dotsClass: "slider_dots",
   });
 });
   </script>
+
   <script>
 $(document).ready(function(){
   $('.multiple-itemsInst').slick({
@@ -542,115 +544,87 @@ $(document).ready(function(){
   });
 });
   </script>
-  <!-- <script>
-    var firstLetter = document.getElementById('firstLetter')
-    var delimiter = document.getElementById('delimiter')
-    var currentLetter = 1 // Номер слайда
-    var current = 0 // расстояние, на которое передвинуть слайд
-    var sliderObjectWrap = document.getElementById('portfolio__slider')
-    var sliderObject = document.querySelectorAll('#portfolio__slider > #portfolio__slide__wrap')
-    var sliderObjectNight = document.querySelectorAll('#portfolio__slider_night > #portfolio__slide__wrap')
-    var sliderObjectNight = document.querySelectorAll('#portfolio__slider_day > #portfolio__slide__wrap')
 
-/////////////////////////////////////////
-
-    function scrollNext(){ // Перелистывание слайда впред
-      if(current < sliderObjectWrap.offsetWidth * (sliderObject.length - 1)){ // Проверка на количество слайдов
-        for(let i=0; i<sliderObject.length;i++){
-        sliderObject[i].style.transform = "translateX(-" + (current + sliderObjectWrap.offsetWidth) +"px)"
-        } // Перебираем все слайды
-        current+=sliderObjectWrap.offsetWidth
-        currentLetter+=1
-      } else{
-        current = current
-      }
-      firstLetter.innerHTML = currentLetter
-    } 
-
-    function scrollPrev(){ // Перелистывание слайда назад
-      for(let i=0; i<sliderObject.length;i++){
-        sliderObject[i].style.transform = "translateX(-" + (current - sliderObjectWrap.offsetWidth) +"px)"
-      } // Перебираем все слайды
-      current-=sliderObjectWrap.offsetWidth
-      currentLetter-=1
-      if(current < 0){ // Проверка на количество слайдов
-        current = 0
-        currentLetter = 1
-      } 
-      firstLetter.innerHTML = currentLetter
-    } 
-
-//////////////////////////////////////////
-
-
-
-//////////////////////////////////////////
-
-    document.addEventListener("DOMContentLoaded", () => {
-      delimiter.innerHTML = sliderObject.length
-      firstLetter.innerHTML = currentLetter
-    }); // Установить конкретное кол-во слайдов в верстку
-
-
-    var Portfoloi_weeding = document.getElementById('portfolio__weeding')
-    var Portfoloi_night = document.getElementById('portfolio__night')
-    var Portfoloi_day = document.getElementById('portfolio__day')
-
-    document.addEventListener("DOMContentLoaded", () => {
-      Portfoloi_weeding.style.display = "block"
-      Portfoloi_night.style.display = "none"
-      Portfoloi_day.style.display = "none"
-    }); // Установить слайдер по умолчанию
-
-    function showWeeding(){
-      Portfoloi_weeding.style.display = "block"
-      Portfoloi_night.style.display = "none"
-      Portfoloi_day.style.display = "none"
-    }
-    function showNight(){
-      Portfoloi_weeding.style.display = "none"
-      Portfoloi_night.style.display = "block"
-      Portfoloi_day.style.display = "none"
-    }
-    function showDay(){
-      Portfoloi_weeding.style.display = "none"
-      Portfoloi_night.style.display = "none"
-      Portfoloi_day.style.display = "block"
-    }
-
-  </script> -->
   <script>
+
+      var ul 
+      var step 
+      var quantity 
+      var slideWidth 
+      var currentSlide 
+      var firstLetter 
+      var delimiter 
       
 
     function showWeeding(){
       document.getElementById('portfolio__weeding').style.display = "block"
-        document.getElementById('portfolio__night').style.display = "none"
-        document.getElementById('portfolio__day').style.display = "none"
+      document.getElementById('portfolio__night').style.display = "none"
+      document.getElementById('portfolio__day').style.display = "none"
 
-      var ul = document.querySelector("#portfolio__weeding > .port__slider > #ul")
-      var step = document.querySelector("#portfolio__weeding > .port__slider > #ul > li")
-      var quantity = document.querySelectorAll("#portfolio__weeding > .port__slider > #ul > li").length
-      var slideWidth = 0
-      var currentSlide = 1
-      var firstLetter = document.querySelector('#portfolio__weeding > .portfolio__slideButton > #firstLetter')
-      var delimiter = document.querySelector('#portfolio__weeding > .portfolio__slideButton > #delimiter')
+      ul = document.querySelector("#portfolio__weeding > .port__slider > #ul")
+      step = document.querySelector("#portfolio__weeding > .port__slider > #ul > li")
+      quantity = document.querySelectorAll("#portfolio__weeding > .port__slider > #ul > li").length
+      slideWidth = 0
+      currentSlide = 1
+      firstLetter = document.querySelector('#portfolio__weeding > .portfolio__slideButton > #firstLetter')
+      delimiter = document.querySelector('#portfolio__weeding > .portfolio__slideButton > #delimiter')
+      firstLetter.innerHTML = currentSlide
+      delimiter.innerHTML = quantity
+      ul.style.left = "0px"
     }
 ///////////////////////////////////////////////////////////
     function showNight(){
       document.getElementById('portfolio__weeding').style.display = "none"
       document.getElementById('portfolio__night').style.display = "block"
       document.getElementById('portfolio__day').style.display = "none"
-      var ul = document.querySelector("#portfolio__night > .port__slider > #ul")
-      var step = document.querySelector("#portfolio__night > .port__slider > #ul > li")
-      var quantity = document.querySelectorAll("#portfolio__night > .port__slider > #ul > li").length
-      var slideWidth = 0
-      var currentSlide = 1
-      var firstLetter = document.querySelector('#portfolio__night > .portfolio__slideButton > #firstLetter')
-      var delimiter = document.querySelector('#portfolio__night > .portfolio__slideButton > #delimiter')
+
+      ul = document.querySelector("#portfolio__night > .port__slider > #ul")
+      step = document.querySelector("#portfolio__night > .port__slider > #ul > li")
+      quantity = document.querySelectorAll("#portfolio__night > .port__slider > #ul > li").length
+      slideWidth = 0
+      currentSlide = 1
+      firstLetter = document.querySelector('#portfolio__night > .portfolio__slideButton > #firstLetter')
+      delimiter = document.querySelector('#portfolio__night > .portfolio__slideButton > #delimiter')
+      ul.style.left = "0px"
       firstLetter.innerHTML = currentSlide
       delimiter.innerHTML = quantity
     }
-//////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
+    function showDay(){
+      document.getElementById('portfolio__weeding').style.display = "none"
+      document.getElementById('portfolio__night').style.display = "none"
+      document.getElementById('portfolio__day').style.display = "block"
+
+      ul = document.querySelector("#portfolio__day > .port__slider > #ul")
+      step = document.querySelector("#portfolio__day > .port__slider > #ul > li")
+      quantity = document.querySelectorAll("#portfolio__day > .port__slider > #ul > li").length
+      slideWidth = 0
+      currentSlide = 1
+      firstLetter = document.querySelector('#portfolio__day > .portfolio__slideButton > #firstLetter')
+      delimiter = document.querySelector('#portfolio__day > .portfolio__slideButton > #delimiter')
+      ul.style.left = "0px"
+      firstLetter.innerHTML = currentSlide
+      delimiter.innerHTML = quantity
+    }
+
+////////////////////////////////////////////////////////////////
+    document.addEventListener("DOMContentLoaded", () => {
+        
+      document.getElementById('portfolio__weeding').style.display = "block"
+      document.getElementById('portfolio__night').style.display = "none"
+      document.getElementById('portfolio__day').style.display = "none"
+      ul = document.querySelector("#ul")
+      step = document.querySelector("#ul > li")
+      quantity = document.querySelectorAll("#portfolio__weeding > .port__slider > #ul > li").length
+      slideWidth = 0
+      currentSlide = 1
+      firstLetter = document.querySelector('#portfolio__weeding > .portfolio__slideButton > #firstLetter')
+      delimiter = document.querySelector('#portfolio__weeding > .portfolio__slideButton > #delimiter')
+      firstLetter.innerHTML = currentSlide
+      delimiter.innerHTML = quantity
+      }); // Стандартные параметры при загрузке страницы
+
+      //////////////////////////////////////////////////////////////
     function next(){
       slideWidth+=step.offsetWidth
       currentSlide+=1
@@ -661,24 +635,54 @@ $(document).ready(function(){
         slideWidth = 0
       }
       firstLetter.innerHTML = currentSlide
-      console.log(ul)
     }
-////////////////////////////////////////////////////////////////
-    document.addEventListener("DOMContentLoaded", () => {
-        
-        document.getElementById('portfolio__weeding').style.display = "block"
-        document.getElementById('portfolio__night').style.display = "none"
-        document.getElementById('portfolio__day').style.display = "none"
-        var ul = document.querySelector("#ul")
-      var step = document.querySelector("#ul > li")
-      var quantity = document.querySelectorAll("#portfolio__weeding > .port__slider > #ul > li").length
-      var slideWidth = 0
-      var currentSlide = 1
-      var firstLetter = document.querySelector('#portfolio__weeding > .portfolio__slideButton > #firstLetter')
-      var delimiter = document.querySelector('#portfolio__weeding > .portfolio__slideButton > #delimiter')
+    function prev(){
+      slideWidth-=step.offsetWidth
+      currentSlide-=1
+      ul.style.left = "-" + slideWidth + "px"
+      if(currentSlide < 1){
+        slideWidth = step.offsetWidth * (quantity-1)
+        ul.style.left ="-" + slideWidth + "px"
+        currentSlide = quantity
+      }
       firstLetter.innerHTML = currentSlide
-        delimiter.innerHTML = quantity
-      }); // Установить конкретное кол-во слайдов в верстку
+    }
+  </script>
+
+  <script>
+    var toogle_state = false
+    var nav = document.getElementById('main_nav')
+    var nav_href = document.querySelectorAll('#main_nav > a')
+    function toogle_nav(){
+      if(toogle_state){
+        for(var i=0;i<nav_href.length;i++){
+          nav_href[i].style.transform = 'translateY(-50px)'
+          nav_href[i].style.opacity = '0'
+        }
+        toogle_state = false
+      }else{
+        for(var i=0;i<nav_href.length;i++){
+          nav_href[i].style.transform = 'translateY(0)'
+          nav_href[i].style.opacity = '1'
+
+        }
+        toogle_state = true
+      }
+    }
+  </script>
+
+  <script>
+    var whiteOpacityBox = document.getElementById('srvice__lastSlide_opacity')
+    
+    document.addEventListener("DOMContentLoaded", () => {
+      var buttonSlidePrev = document.querySelector('.services__wrap > .slider > .slick-prev')
+      var buttonSlideNext = document.querySelector('.services__wrap > .slider > .slick-next')
+      buttonSlidePrev.setAttribute('onClick','whiteOpacity()')
+      buttonSlideNext.setAttribute('onClick','whiteOpacity()')
+    });
+    function whiteOpacity(){
+      whiteOpacityBox.classList.toggle('srvice__lastSlide_opacity_hide')
+    }
   </script>
 </body>
 </html>

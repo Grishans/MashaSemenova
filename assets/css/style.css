@@ -30,6 +30,7 @@ header {
 }
 .header__nav ul.main_nav {
   display: flex;
+  position: relative;
 }
 .header__nav ul.main_nav a {
   text-decoration: none;
@@ -37,6 +38,9 @@ header {
   margin-left: 20px;
   position: relative;
   line-height: 1;
+  transition: 0.3s;
+  transform: translateY(-50px);
+  opacity: 0;
 }
 .header__nav ul.main_nav a::after {
   display: block;
@@ -225,12 +229,48 @@ section.services .slick-initialized .slick-slide {
 }
 .srvice__lastSlide_opacity {
   position: absolute;
-  height: 59.1%;
-  width: 14.3%;
+  height: 70.1%;
+  width: 12.6%;
   background: #fff;
-  bottom: 8%;
+  bottom: 15%;
   right: 0;
   opacity: 0.6;
+}
+@keyframes opacityHide {
+  0% {
+    width: 12.6%;
+  }
+  50% {
+    width: 0;
+  }
+  100% {
+    width: 12.6%;
+  }
+}
+.srvice__lastSlide_opacity_hide {
+  animation-name: opacityHide;
+  animation-duration: 0.3s;
+  animation-timing-function: ease;
+}
+.services__wrap .slick-prev,
+.services__wrap .slick-next {
+  top: 97.4%;
+}
+.services__wrap .slick-next {
+  right: 4%;
+  color: #000;
+}
+.services__wrap .slick-next::before {
+  opacity: 1;
+  color: #000;
+}
+.services__wrap .slick-prev {
+  left: 0%;
+  color: #000;
+}
+.services__wrap .slick-prev::before {
+  opacity: 1;
+  color: #000;
 }
 
 /* Portfolio */
