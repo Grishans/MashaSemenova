@@ -73,9 +73,10 @@ rel="stylesheet">
         <div class="slider multiple-items">
           <div>
             <div class="services__box">
-            <p class="services__box__article">Вечерний макияж</p>
-            <p class="services__box__time">60 минут</p>
-            <img src="assets/img/services_1.png" alt="">
+              <p class="services__box__article">Вечерний макияж</p>
+              <p class="services__box__time">60 минут</p>
+              <img src="assets/img/services_1.png" alt="">
+              <a class="services__box_form" href="#form">Заказать</a>
             </div>
           </div>
           <div>
@@ -83,8 +84,18 @@ rel="stylesheet">
               <p class="services__box__article">Свадебный макияж</p>
               <p class="services__box__time">60 минут</p>
               <img src="assets/img/services_2.png" alt="">
+              <a class="services__box_form" href="#form">Заказать</a>
             </div>
           </div>
+          <div>
+            <div class="services__box">
+              <p class="services__box__article">Макияж на фотосессию</p>
+              <p class="services__box__time">60 минут</p>
+              <img src="assets/img/services_3.png" alt="">
+              <a class="services__box_form" href="#form">Заказать</a>
+            </div>
+          </div>
+          
           <div>
             <div class="services__box">
               <p class="services__box__article">Макияж на фотосессию</p>
@@ -98,14 +109,7 @@ rel="stylesheet">
               <p class="services__box__article">Макияж на фотосессию</p>
               <p class="services__box__time">60 минут</p>
               <img src="assets/img/services_3.png" alt="">
-            </div>
-          </div>
-          
-          <div>
-            <div class="services__box">
-              <p class="services__box__article">Макияж на фотосессию</p>
-              <p class="services__box__time">60 минут</p>
-              <img src="assets/img/services_3.png" alt="">
+              <a class="services__box_form" href="#form">Заказать</a>
             </div>
           </div>
           
@@ -114,6 +118,7 @@ rel="stylesheet">
               <p class="services__box__article">Вечерний макияж</p>
               <p class="services__box__time">60 минут</p>
               <img src="assets/img/services_1.png" alt="">
+              <a class="services__box_form" href="#form">Заказать</a>
             </div>
           </div>
           
@@ -122,6 +127,7 @@ rel="stylesheet">
               <p class="services__box__article">Вечерний макияж</p>
               <p class="services__box__time">60 минут</p>
               <img src="assets/img/services_1.png" alt="">
+              <a class="services__box_form" href="#form">Заказать</a>
             </div>
           </div>
   
@@ -453,14 +459,14 @@ rel="stylesheet">
     
   </section>
 
-  <section class="form">
+  <section id="form" class="form">
     <div class="form__wrap">
       <div class="form__application">
         <p class="form_title">Форма заявки</p>
         <form class="form" action="">
           <input type="text" placeholder="Имя" required>
-          <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Номер телефона" title="071-000-0000" required>
-          <input type="date" placeholder="Дата" required>
+          <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Номер телефона" title="000-000-0000" required>
+          <input type="text" placeholder="Дата" onfocus="(this.type='date')" required>
           <select>
             <option selected disabled>Тип макияжа</option>
             <option value="Свадебный макияж">Свадебный макияж</option>
@@ -538,7 +544,6 @@ $(document).ready(function(){
     infinite: false,
     slidesToShow: 4.5,
     slidesToScroll: 1,
-    arrows: false,
     dots: true,
     dotsClass: "slider_dots",
   });
@@ -673,6 +678,8 @@ $(document).ready(function(){
 
   <script>
     var whiteOpacityBox = document.getElementById('srvice__lastSlide_opacity')
+    var buttonSlidePrev
+    var buttonSlideNext
     
     document.addEventListener("DOMContentLoaded", () => {
       var buttonSlidePrev = document.querySelector('.services__wrap > .slider > .slick-prev')
@@ -681,8 +688,20 @@ $(document).ready(function(){
       buttonSlideNext.setAttribute('onClick','whiteOpacity()')
     });
     function whiteOpacity(){
-      whiteOpacityBox.classList.toggle('srvice__lastSlide_opacity_hide')
+      buttonSlidePrev = document.querySelector('.services__wrap > .slider > .slick-prev')
+      buttonSlideNext = document.querySelector('.services__wrap > .slider > .slick-next')
+      if(buttonSlidePrev.classList.contains('slick-disabled') ||   buttonSlideNext.classList.contains('slick-disabled')){
+        whiteOpacityBox.style.opacity = '0.6'
+      } else{
+        whiteOpacityBox.style.opacity = '0'
+        setTimeout(()=>whiteOpacityBox.style.opacity = '0.6',400)
+      }
+      if(buttonSlideNext.classList.contains('slick-disabled')){
+        whiteOpacityBox.style.opacity = '0'
+      }
     }
   </script>
+
+  
 </body>
 </html>
