@@ -340,45 +340,81 @@ rel="stylesheet">
     <p class="title">Отзывы</p>
     <div class="reviews__toogle">
       <input id="video" name="reviews" type="radio" checked>
-      <label for="video">Видео отзывы</label>
+      <label id="review_video" for="video">Видео отзывы</label>
       <input id="text" name="reviews" type="radio">
-      <label for="text">Текстовые отзывы</label>
+      <label id="review_text" for="text">Текстовые отзывы</label>
     </div>
-    <div class="services__wrap">
-      <hr>
-        <div class="slider multiple-items">
-          <div>
-            <div class="services__box">
-              <video controls src="assets/img/video.mp4"></video>
-          </div>
-        </div>
-          <div>
-            <div class="services__box">
-              <video controls src="assets/img/video.mp4"></video>
+    <div class="reviews__wrap">
+      <div class="services__wrap reviews__wrap__videoReviews">
+        <hr>
+          <div class="slider multiple-items">
+            <div>
+              <div class="services__box">
+                <video controls src="assets/img/video.mp4"></video>
             </div>
           </div>
-          <div>
-            <div class="services__box">
-              <video controls src="assets/img/video.mp4"></video>
+            <div>
+              <div class="services__box">
+                <video controls src="assets/img/video.mp4"></video>
+              </div>
             </div>
-          </div>
-          <div>
-            <div class="services__box">
-              <video controls src="assets/img/video.mp4"></video>
+            <div>
+              <div class="services__box">
+                <video controls src="assets/img/video.mp4"></video>
+              </div>
             </div>
-          </div>
-          <div>
-            <div class="services__box">
-              <video controls src="assets/img/video.mp4"></video>
+            <div>
+              <div class="services__box">
+                <video controls src="assets/img/video.mp4"></video>
+              </div>
             </div>
+            <div>
+              <div class="services__box">
+                <video controls src="assets/img/video.mp4"></video>
+              </div>
+            </div>
+    
           </div>
+          <ul class="slider_dots"></ul>
   
-        </div>
-
-        <ul class="slider_dots"></ul>
-
-      <div class="srvice__lastSlide_opacity"></div>
+        <div class="srvice__lastSlide_opacity"></div>
+      </div>
+      <div class="services__wrap reviews__wrap__textReviews">
+        <hr>
+          <div class="slider multiple-items">
+            <div>
+              <div class="services__box">
+                <img src="assets/img/review_template.png" alt="">
+            </div>
+          </div>
+            <div>
+              <div class="services__box">
+                <img src="assets/img/review_template.png" alt="">
+              </div>
+            </div>
+            <div>
+              <div class="services__box">
+                <img src="assets/img/review_template.png" alt="">
+              </div>
+            </div>
+            <div>
+              <div class="services__box">
+                <img src="assets/img/review_template.png" alt="">
+              </div>
+            </div>
+            <div>
+              <div class="services__box">
+                <img src="assets/img/review_template.png" alt="">
+              </div>
+            </div>
+    
+          </div>
+          <ul class="slider_dots"></ul>
+  
+        <div class="srvice__lastSlide_opacity"></div>
+      </div>
     </div>
+    
     <div class="title__top_left"></div>
     <div class="title__top_right"></div>
   </section>
@@ -455,6 +491,7 @@ rel="stylesheet">
           </div>
         </div>
         <ul class="slider_dots"></ul>
+        <div id="srvice__lastSlide_opacity" class="srvice__lastSlide_opacity"></div>
     </div>
     
   </section>
@@ -551,7 +588,7 @@ $(document).ready(function(){
   </script>
 
   <script>
-
+    // Custom slider (portfolio)
       var ul 
       var step 
       var quantity 
@@ -655,6 +692,7 @@ $(document).ready(function(){
   </script>
 
   <script>
+    // Navigation
     var toogle_state = false
     var nav = document.getElementById('main_nav')
     var nav_href = document.querySelectorAll('#main_nav > a')
@@ -677,31 +715,57 @@ $(document).ready(function(){
   </script>
 
   <script>
-    var whiteOpacityBox = document.getElementById('srvice__lastSlide_opacity')
+    // opacity block in sliders
+    var whiteOpacityBox = document.querySelectorAll('.srvice__lastSlide_opacity')
     var buttonSlidePrev
     var buttonSlideNext
     
     document.addEventListener("DOMContentLoaded", () => {
-      var buttonSlidePrev = document.querySelector('.services__wrap > .slider > .slick-prev')
-      var buttonSlideNext = document.querySelector('.services__wrap > .slider > .slick-next')
-      buttonSlidePrev.setAttribute('onClick','whiteOpacity()')
-      buttonSlideNext.setAttribute('onClick','whiteOpacity()')
+      var buttonSlidePrev = document.querySelectorAll('.services__wrap > .slider > .slick-prev')
+      var buttonSlideNext = document.querySelectorAll('.services__wrap > .slider > .slick-next')
+      for(let i=0;i<buttonSlideNext.length;i++){
+        buttonSlidePrev[i].setAttribute('onClick','whiteOpacity()')
+        buttonSlideNext[i].setAttribute('onClick','whiteOpacity()')
+      }
     });
     function whiteOpacity(){
-      buttonSlidePrev = document.querySelector('.services__wrap > .slider > .slick-prev')
-      buttonSlideNext = document.querySelector('.services__wrap > .slider > .slick-next')
-      if(buttonSlidePrev.classList.contains('slick-disabled') ||   buttonSlideNext.classList.contains('slick-disabled')){
-        whiteOpacityBox.style.opacity = '0.6'
-      } else{
-        whiteOpacityBox.style.opacity = '0'
-        setTimeout(()=>whiteOpacityBox.style.opacity = '0.6',400)
+      buttonSlidePrev = document.querySelectorAll('.services__wrap > .slider > .slick-prev')
+      buttonSlideNext = document.querySelectorAll('.services__wrap > .slider > .slick-next')
+      for(let i=0;i<buttonSlideNext.length;i++){
+        if(buttonSlidePrev[i].classList.contains('slick-disabled') || buttonSlideNext[i].classList.contains('slick-disabled')){
+          whiteOpacityBox[i].style.opacity = '0.6'
+        } else{
+          whiteOpacityBox[i].style.opacity = '0'
+          setTimeout(()=>whiteOpacityBox[i].style.opacity = '0.6',400)
+        }
+        if(buttonSlideNext[i].classList.contains('slick-disabled')){
+          whiteOpacityBox[i].style.opacity = '0'
+        }
       }
-      if(buttonSlideNext.classList.contains('slick-disabled')){
-        whiteOpacityBox.style.opacity = '0'
-      }
+      
     }
   </script>
 
-  
+  <script>
+    // Reviews
+    var reviews_video = document.querySelector(".reviews > .reviews__wrap > .reviews__wrap__videoReviews")
+    var reviews_text = document.querySelector(".reviews > .reviews__wrap > .reviews__wrap__textReviews")
+    document.querySelector('#review_text').onclick = function(){
+      reviews_video.style.visibility = "hidden"
+      reviews_text.style.visibility = "visible"
+      reviews_video.style.opacity = 0
+      reviews_text.style.opacity = 1
+    }
+    document.querySelector('#review_video').onclick = function(){
+      reviews_video.style.visibility = "visible"
+      reviews_text.style.visibility = "hidden"
+      reviews_video.style.opacity = 1
+      reviews_text.style.opacity = 0
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      reviews_text.style.visibility = "hidden"
+    });
+  </script>
 </body>
 </html>
